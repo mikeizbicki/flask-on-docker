@@ -19,7 +19,8 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
-      # must specify POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB
+      - ./.env.prod
+      # must define POSTGRES_PASSWORD
       - ./.env.prod.db
   nginx:
     build: ./services/nginx
